@@ -11,6 +11,7 @@ const InputSearch = () => {
   const handleSearch = (e) => {
     const keyword = searchHref.current.value;
 
+    if (keyword.length <= 3) return;
     if (e.key === 'Enter' || e.type === 'click') {
       e.preventDefault();
       router.push(`/search/${keyword}`);
@@ -18,8 +19,8 @@ const InputSearch = () => {
   };
   return (
     <div className="relative">
-      <input type="text" placeholder="search anime..." ref={searchHref} onKeyDown={handleSearch} className="bg-white md:w-100 p-2 rounded-md w-full" />
-      <button onClick={handleSearch} className="absolute end-2 top-2 text-slate-800 ">
+      <input type="text" placeholder="search anime..." ref={searchHref} onKeyDown={handleSearch} className="bg-white md:w-100 p-2 rounded-md w-full text-dark" />
+      <button onClick={handleSearch} className="absolute end-2 cursor-pointer top-2 text-slate-800 ">
         <MagnifyingGlassIcon size={24} />
       </button>
     </div>

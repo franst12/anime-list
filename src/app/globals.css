@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-primary: #eeeeee;
+  --color-accent: #ffc639;
+  --color-secondary: #393e46;
+  --color-dark: #222831;
+}
+
 *,
 *,
 body {
@@ -16,4 +23,26 @@ img {
 
 img:hover {
   scale: 1.03;
+}
+
+/* HTML: <div class="loader"></div> */
+.loading {
+  width: fit-content;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-bottom: 8px;
+  color: #ffc639;
+
+  background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+  animation: l2 2s linear infinite;
+  -webkit-animation: l2 2s linear infinite;
+}
+.loading:before {
+  content: 'Loading...';
+}
+@keyframes l2 {
+  to {
+    background-size: 100% 3px;
+  }
 }

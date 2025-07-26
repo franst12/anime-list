@@ -4,13 +4,15 @@ import Header from '@/src/components/AnimeList/Header';
 
 const Page = async ({ params }) => {
   const keyword = params.keyword;
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/anime?q=${keyword}`);
+  const decodeKeyword = decodeURI(keyword);
+  console.log(decodeKeyword);
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/anime?q=${decodeKeyword}`);
   const searchAnime = response.data.data;
 
   return (
     <>
       <section>
-        <Header title={`Hasil pencarian ${keyword}`} />
+        <Header title={`Hasil pencarian ${decodeKeyword}`} />
         <AnimeList apiAnime={searchAnime} />
       </section>
     </>
