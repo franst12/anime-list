@@ -13,10 +13,6 @@ const Page = async () => {
         <Header title="Paling Populer" linkHref="/populer" linkTitle="Lihat Semua" />
         <AnimeList apiAnime={topAnime} />
       </section>
-      <section>
-        <Header title="Paling Baru" linkHref="/new" linkTitle="Ikuti Sekarang" />
-        <AnimeList apiAnime={topAnime} />
-      </section>
     </>
   );
 };
