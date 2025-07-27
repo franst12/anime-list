@@ -14,7 +14,6 @@ const Page = () => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/top/anime?page=${page}`);
     const data = response.data;
     setTopAnime(data);
-    console.log(data);
   };
 
   useEffect(() => {

@@ -7,7 +7,7 @@ const Page = async ({ params }) => {
   const decodeKeyword = decodeURI(keyword);
   console.log(decodeKeyword);
   const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/anime?q=${decodeKeyword}`);
-  const searchAnime = response.data.data;
+  const searchAnime = response.data;
 
   return (
     <>
