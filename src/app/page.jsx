@@ -1,12 +1,10 @@
 import axios from 'axios';
 import AnimeList from '../components/AnimeList';
 import Header from '../components/AnimeList/Header';
+import { getAnimeList } from './libs/api.lib';
 
 const Page = async () => {
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/top/anime?limit=8`);
-  const topAnime = response.data;
-  console.log(topAnime);
-
+  const topAnime = await getAnimeList({ resource: 'top/anime', query: 'limit=8' });
   return (
     <>
       <section>

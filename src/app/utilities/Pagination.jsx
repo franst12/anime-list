@@ -1,6 +1,12 @@
+'use client';
+
 import React from 'react';
 
 const Pagination = ({ page, setPage, lastPage }) => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
   const handlePrevPage = () => {
     setPage((prevPage) => prevPage - 1);
   };

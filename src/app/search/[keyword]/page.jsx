@@ -1,13 +1,12 @@
 import axios from 'axios';
 import AnimeList from '@/src/components/AnimeList';
 import Header from '@/src/components/AnimeList/Header';
+import { getAnimeList } from '../../libs/api.lib';
 
 const Page = async ({ params }) => {
   const keyword = params.keyword;
   const decodeKeyword = decodeURI(keyword);
-  console.log(decodeKeyword);
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/anime?q=${decodeKeyword}`);
-  const searchAnime = response.data;
+  const searchAnime = await getAnimeList({ resource: 'anime', query: `q=${decodeKeyword}` });
 
   return (
     <>
