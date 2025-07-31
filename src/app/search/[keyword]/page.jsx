@@ -1,7 +1,7 @@
 import axios from 'axios';
 import AnimeList from '@/src/components/AnimeList';
 import Header from '@/src/components/AnimeList/Header';
-import { getAnimeList } from '../../libs/api.lib';
+import { getAnimeList } from '../../../libs/api.lib';
 
 const Page = async ({ params }) => {
   const keyword = params.keyword;

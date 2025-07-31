@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import VideoPlayer from '../../utilities/VideoPlayer';
 
-const { getAnimeList } = require('../../libs/api.lib');
+const { getAnimeList } = require('../../../libs/api.lib');
 
 const Page = async ({ params }) => {
   const id = params.id;
-  const animeDetail = await getAnimeList({ resource: `anime/${id}` });
+  const animeDetail = await getAnimeList(`anime/${id}`);
   const data = animeDetail.data;
   return (
     <div className="pt-5 px-3">
