@@ -30,7 +30,7 @@ const VideoPlayer = ({ videoId }) => {
           <button onClick={handleClick}>
             <XCircleIcon size={32} className="absolute -top-3 rounded -left-3 hover:text-red-600 cursor-pointer" />
           </button>
-          <YouTube videoId={videoId} opts={opts} onReady={ready} onError={handleError} />;
+          <YouTube videoId={videoId} opts={opts} onReady={ready} onError={handleError} />
         </div>
       </>
     );

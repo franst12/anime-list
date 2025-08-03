@@ -11,7 +11,7 @@ const InputSearch = () => {
   const handleSearch = (e) => {
     const keyword = searchHref.current.value;
 
-    if (keyword.length <= 3) return;
+    if (keyword.length <= 3 || keyword === '') return;
     if (e.key === 'Enter' || e.type === 'click') {
       e.preventDefault();
       router.push(`/search/${keyword}`);

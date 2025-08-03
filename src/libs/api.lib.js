@@ -1,3 +1,4 @@
+import { FilmStripIcon } from '@phosphor-icons/react';
 import axios from 'axios';
 
 export const getAnimeList = async (resource, query) => {
@@ -7,5 +8,16 @@ export const getAnimeList = async (resource, query) => {
 
 export const getNestedAnimeList = async (resource, objectNested) => {
   const response = await getAnimeList(resource);
-  return response.data.flatMap((items) => items.entry);
+  return response.data.flatMap((items) => items[objectNested]);
+};
+
+export const reproduce = (data, gap) => {
+  const first = ~~(Math.random() * (data.length - gap));
+  const last = first + gap;
+
+  const response = {
+    data: data.slice(first, last),
+  };
+
+  return response;
 };

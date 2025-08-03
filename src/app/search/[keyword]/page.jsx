@@ -6,7 +6,7 @@ import { getAnimeList } from '../../../libs/api.lib';
 const Page = async ({ params }) => {
   const keyword = params.keyword;
   const decodeKeyword = decodeURI(keyword);
-  const searchAnime = await getAnimeList({ resource: 'anime', query: `q=${decodeKeyword}` });
+  const searchAnime = await getAnimeList('anime', `q=${decodeKeyword}`);
 
   return (
     <>
