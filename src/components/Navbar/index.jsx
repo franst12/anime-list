@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import InputSearch from './InputSearch';
+import UserAction from './UserAction';
 
 const Navbar = () => {
   return (
@@ -9,6 +10,7 @@ const Navbar = () => {
           CUYANIMELIST
         </Link>
         <InputSearch />
+        <UserAction />
       </div>
     </header>
   );
