@@ -13,18 +13,6 @@ body {
   box-sizing: border-box;
 }
 
-img {
-  transition: 0.3s all;
-  -webkit-transition: 0.3s all;
-  -moz-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  -o-transition: 0.3s all;
-}
-
-img:hover {
-  scale: 1.03;
-}
-
 /* HTML: <div class="loader"></div> */
 .loading {
   width: fit-content;

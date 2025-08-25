@@ -7,7 +7,7 @@ const Navbar = () => {
     <header>
       <div className="flex justify-between md:items-center  p-5 md:flex-row flex-col gap-3 bg-accent">
         <Link href="/" className="text-2xl font-bold text-white">
-          CUYANIMELIST
+          BERBER_ANIME
         </Link>
         <InputSearch />
         <UserAction />

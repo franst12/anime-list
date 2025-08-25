@@ -12,7 +12,7 @@ const Page = () => {
   const [topAnime, setTopAnime] = useState([]);
 
   const fetchData = async () => {
-    const response = await getAnimeList({ resource: 'top/anime', query: `page=${page}` });
+    const response = await getAnimeList('top/anime', `page=${page}`);
     setTopAnime(response);
   };
 

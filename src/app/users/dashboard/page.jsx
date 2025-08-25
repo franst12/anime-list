@@ -15,7 +15,9 @@ const page = async () => {
         <Link href={'/users/collection'} className="bg-accent p-2 rounded">
           My Collection
         </Link>
-        <button className="bg-accent p-2 rounded">Favorite</button>
+        <Link href={'/users/dashboard/comment'} className="bg-accent p-2 rounded">
+          My Comment
+        </Link>
       </div>
     </div>
   );

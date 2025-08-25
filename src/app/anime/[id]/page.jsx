@@ -1,16 +1,33 @@
 import Image from 'next/image';
 import VideoPlayer from '../../utilities/VideoPlayer';
+import CollectionButton from '@/src/components/AnimeList/CollectionButton';
+import { authUsereSession } from '@/src/libs/auth-libs';
+import prisma from '@/src/libs/prisma';
+import Header from '@/src/components/dashboard/Header';
 
 const { getAnimeList } = require('../../../libs/api.lib');
 
 const Page = async ({ params }) => {
-  const id = params.id;
+  const id = await params?.id;
   const animeDetail = await getAnimeList(`anime/${id}`);
   const data = animeDetail.data;
+
+  const dataUser = await authUsereSession();
+  const collection = await prisma.collection.findFirst({
+    where: {
+      user_email: dataUser?.email,
+      anime_mal_id: id,
+    },
+  });
+
   return (
     <div className="pt-5 px-3">
-      <div>
+      <div className="mb-3">
+        <Header />
+      </div>
+      <div className="flex flex-col gap-3">
         <h1 className="md:text-3xl text-xl font-bold mb-3">{data.title}</h1>
+        {!collection && dataUser ? <CollectionButton anime_mal_id={id} user_email={dataUser?.email} images={data?.images?.webp?.image_url} title={data?.title} /> : ''}
       </div>
       <div className="flex gap-5 items-center overflow-x-auto ">
         <div className="border flex flex-col justify-center items-center gap-1 my-3 rounded-md border-accent p-3 w-25">
