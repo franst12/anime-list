@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Header = ({ title, linkHref, linkTitle }) => {
   return (
     <div className="flex justify-between items-center">
-      <div className="p-4 text-3xl font-bold">
+      <div className="p-4 md:text-3xl font-bold">
         <p>{title}</p>
       </div>
       {linkHref && linkTitle ? (

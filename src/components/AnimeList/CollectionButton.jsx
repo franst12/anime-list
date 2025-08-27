@@ -9,14 +9,11 @@ const CollectionButton = ({ anime_mal_id, user_email, images, title }) => {
     e.preventDefault();
 
     const data = { anime_mal_id, user_email, images, title };
-    console.log('Ini data yang ditambahakan ke favorit :', data);
 
     try {
       const response = await axios.post('/api/v1/collection/', data);
-      const collection = await response.data;
 
       setIsCreated(true);
-      console.log(collection);
     } catch (error) {
       console.error('Error adding to collection:', error);
     }

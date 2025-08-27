@@ -6,11 +6,11 @@ const Page = async () => {
   const topAnime = await getAnimeList('top/anime', 'limit=8');
   let recomendeationAnime = await getNestedAnimeList('recommendations/anime', 'entry');
 
-  recomendeationAnime = reproduce(recomendeationAnime, 4);
+  recomendeationAnime = reproduce(recomendeationAnime, 5);
 
   return (
-    <>
-      <section>
+    <div className="mb-5">
+      <section className="mb-7">
         <Header title="Paling Populer" linkHref="/popular" linkTitle="Lihat Semua" />
         <AnimeList apiAnime={topAnime} />
       </section>
@@ -18,7 +18,7 @@ const Page = async () => {
         <Header title="Rekomendasi" />
         <AnimeList apiAnime={recomendeationAnime} />
       </section>
-    </>
+    </div>
   );
 };
 
